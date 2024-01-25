@@ -1,7 +1,10 @@
 import { OverviewCard } from "../components";
+import { LineChartExample } from "../components/LineCharts";
+import Recent from "../components/Recent";
+
 function Overview() {
   return (
-    <main>
+    <main className="h-[90vh] overflow-auto">
       <h1 className="text-xl font-mono font-bold my-2">Overview</h1>
       <article className="flex gap-6">
         <main className="flex-1">
@@ -11,7 +14,10 @@ function Overview() {
             <OverviewCard />
           </section>
           <section className="my-2">
-            <h1>chart</h1>
+            <h1 className="my-2">chart</h1>
+            <div>
+              <LineChartExample />
+            </div>
           </section>
         </main>
         <aside className="w-3/12   px-2">
@@ -21,7 +27,8 @@ function Overview() {
               <p className="text-center text-lg font-bold">65,080 rwf</p>
             </div>
           </section>
-          <h1 className="my-2">lsjadflandflas</h1>
+          <h1 className="my-2">Recent</h1>
+          <Recent />
         </aside>
       </article>
     </main>
