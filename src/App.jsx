@@ -1,15 +1,36 @@
 import "./App.css";
-import { Avatar } from "@nextui-org/react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home, Login, Overview, Users } from "./pages";
+import Admin from "./routes/admin";
 
 export default function App() {
-  return (
-    <div className="flex gap-3 items-center">
-      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
-      <Avatar name="Junior" />
-      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-      <Avatar name="Jane" />
-      <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
-      <Avatar name="Joe" />
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/admin",
+      element: <Admin />,
+      children: [
+        {
+          path: "",
+          element: <Overview />,
+        },
+        {
+          path: "users",
+          element: <Users />,
+        },
+      ],
+    },
+    {
+      path: "*",
+      element: <div>Not Found</div>,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
