@@ -1,7 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home, Login, Overview, Users } from "./pages";
-import Admin from "./routes/admin";
+import Admin from "./routes/Admin";
 
 export default function App() {
   const router = createBrowserRouter([
