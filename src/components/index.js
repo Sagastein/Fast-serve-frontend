@@ -1,3 +1,4 @@
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
-export { SideBar, NavBar };
+import OverviewCard from "./OverviewCard";
+export { SideBar, NavBar, OverviewCard };

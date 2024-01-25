@@ -3,11 +3,13 @@ import { Outlet } from "react-router-dom";
 
 function Admin() {
   return (
-    <main className="h-screen overflow-hidden flex">
-      <SideBar />
-      <section className="flex-1 border flex flex-col bg-slate-50">
-        <NavBar />
-        <Outlet />
+    <main className="space-y-2  ">
+      <NavBar />
+      <section className="flex  gap-4 border">
+        <SideBar />
+        <div className="flex-1">
+          <Outlet />
+        </div>
       </section>
     </main>
   );
