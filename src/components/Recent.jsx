@@ -5,7 +5,7 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 function Recent() {
   const { data, error, isLoading } = useSWR(
-    "http://localhost:8080/api/transaction/recent",
+    "/api/transaction/recent",
     fetcher
   );
   if (isLoading)
