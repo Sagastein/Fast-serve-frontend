@@ -1,6 +1,6 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, Login, Overview, Users } from "./pages";
+import { Home, Login, Overview, Users, Device } from "./pages";
 import Admin from "./routes/Admin";
 
 export default function App() {
@@ -24,6 +24,16 @@ export default function App() {
         {
           path: "users",
           element: <Users />,
+          children: [
+            {
+              path: "adduser",
+              element: <div>Add User</div>,
+            },
+          ],
+        },
+        {
+          path: "device",
+          element: <Device />,
         },
       ],
     },
