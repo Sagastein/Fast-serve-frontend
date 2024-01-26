@@ -6,9 +6,17 @@ import {
 } from "react-icons/tb";
 import { CiSettings } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
+import useSignOut from "react-auth-kit/hooks/useSignOut";
+import { useNavigate } from "react-router-dom";
 
 import { NavLink } from "react-router-dom";
 function SideBar() {
+  const signOut = useSignOut();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    signOut();
+    navigate("/login");
+  };
   const links = [
     {
       id: 1,
@@ -61,7 +69,7 @@ function SideBar() {
       </div>
       <div className="flex justify-center items-center gap-2">
         <IoIosLogOut className="font-bold " />
-        <button>logout</button>
+        <button onClick={handleLogout}>logout</button>
       </div>
     </div>
   );
