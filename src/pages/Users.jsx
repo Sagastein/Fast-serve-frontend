@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Adduser from "../components/Adduser";
 import UsersTable from "../components/UsersTable";
-import { Routes, Route, Link } from "react-router-dom";
+import { Outlet, Route, Link } from "react-router-dom";
 const Users = () => {
   const [visible, setVisible] = useState(false);
   return (
@@ -25,10 +25,7 @@ const Users = () => {
       </div>
 
       <UsersTable />
-      <Routes>
-        <Route path="adduser" element={<Adduser />} />
-      </Routes>
-
+      <Outlet />
       {/* <Adduser onClose={()=>setVisible(false)}/> */}
     </div>
   );
