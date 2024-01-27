@@ -17,3 +17,9 @@ body {
 ::-webkit-scrollbar {
   @apply h-1 w-1;
 }
+.bg {
+  background-image: url("./assets/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
