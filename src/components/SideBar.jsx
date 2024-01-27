@@ -51,7 +51,7 @@ function SideBar() {
   ];
   return (
     <div className="bg-white w-32 h-[90vh] flex flex-col  justify-between rounded-lg shadow-lg py-2">
-      <div className=" grid gap-y-4">
+      <div id="links"  className="grid gap-y-4">
         {links.map((link) => (
           <NavLink
             end
@@ -60,7 +60,6 @@ function SideBar() {
             className="flex hover:translate-x-2 group delay-200 duration-250 items-center capitalize w-full gap-2 p-2 px-4"
           >
             <span className="group-hover:text-blue-400">{link.icon}</span>
-
             <p className="text-xs font-bold group-hover:text-blue-400 text-slate-600">
               {link.name}
             </p>
