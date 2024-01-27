@@ -2,44 +2,78 @@ import { Card, LineChart, Title } from "@tremor/react";
 
 const chartdata = [
   {
-    year: 1970,
-    "Export Growth Rate": 2.04,
-    "Import Growth Rate": 1.53,
+    year: "jan",
+    Sales: 34000,
+    Income: 44000,
   },
   {
-    year: 1971,
-    "Export Growth Rate": 1.96,
-    "Import Growth Rate": 1.58,
+    year: "feb",
+    Sales: 25000,
+    Income: 55000,
   },
   {
-    year: 1972,
-    "Export Growth Rate": 1.96,
-    "Import Growth Rate": 1.61,
+    year: "mar",
+    Sales: 43500,
+    Income: 45000,
   },
   {
-    year: 1973,
-    "Export Growth Rate": 1.93,
-    "Import Growth Rate": 1.61,
+    year: "apr",
+    Sales: 54000,
+    Income: 32000,
   },
   {
-    year: 1974,
-    "Export Growth Rate": 1.88,
-    "Import Growth Rate": 1.67,
+    year: "may",
+    Sales: 55909,
+    Income: 56042,
   },
-  //...
+  {
+    year: "jun",
+    Sales: 45500,
+    Income: 41200,
+  },
+  {
+    year: "jul",
+    Sales: 45200,
+    Income: 45500,
+  },
+  {
+    year: "aug",
+    Sales: 48200,
+    Income: 45200,
+  },
+  {
+    year: "sep",
+    Sales: 49200,
+    Income: 50100,
+  },
+  {
+    year: "oct",
+    Sales: 45200,
+    Income: 43200,
+  },
+  {
+    year: "nov",
+    Sales: 45200,
+    Income: 50200,
+  },
+  {
+    year: "dec",
+    Sales: 41001,
+    Income: 45200,
+  },
 ];
 
 const valueFormatter = (number) =>
-  `$ ${new Intl.NumberFormat("us").format(number).toString()}`;
+  `Rwf ${new Intl.NumberFormat("us").format(number).toString()}`;
 
 export const LineChartExample = () => (
   <Card className="bg-white rounded-lg shadow-lg">
-    <Title>Export/Import Growth Rates</Title>
+    <Title>Sales/Incomes</Title>
     <LineChart
       className="mt-6"
       data={chartdata}
       index="year"
-      categories={["Export Growth Rate", "Import Growth Rate"]}
+      categories={["Sales", "Income"]}
       colors={["emerald", "gray"]}
       valueFormatter={valueFormatter}
       yAxisWidth={40}
