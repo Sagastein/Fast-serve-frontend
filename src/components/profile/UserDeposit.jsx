@@ -1,9 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
-import { useAuthStore } from "../../hooks/AuthStore";
 
+import { useParams } from "react-router-dom";
 const UserDeposit = () => {
-  const { user } = useAuthStore();
+  const { id } = useParams();
   const [err, setErr] = useState("");
   const [amount, setAmount] = useState("");
   const [isChecked, setIsChecked] = useState(false);
@@ -20,9 +20,9 @@ const UserDeposit = () => {
     } else {
       const options = {
         method: "POST",
-        url: "/api/transaction",
+        url: "https://fastserve.onrender.com/api/transaction",
         headers: { "Content-Type": "application/json" },
-        data: { Id: user.UserId, amount: amount },
+        data: { Id: id, amount: amount },
       };
 
       axios

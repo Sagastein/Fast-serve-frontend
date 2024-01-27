@@ -5,7 +5,7 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 function Recent() {
   const { data, error, isLoading } = useSWR(
-    "/api/transaction/recent",
+    "https://fastserve.onrender.com/api/transaction/recent",
     fetcher
   );
   if (isLoading)

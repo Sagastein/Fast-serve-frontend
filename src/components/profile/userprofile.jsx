@@ -18,9 +18,9 @@ const userprofile = () => {
   function createAccount() {
     const options = {
       method: "POST",
-      url: "/api/accounts",
+      url: "https://fastserve.onrender.com/api/accounts",
       headers: { "Content-Type": "application/json" },
-      data: { UserId: user.UserId, status: "Active" },
+      data: { UserId: id, status: "Active" },
     };
 
     axios
@@ -43,7 +43,10 @@ const userprofile = () => {
     data: profileData,
     error,
     isLoading,
-  } = useSWR("/api/accounts/profile/" + id, fetcher);
+  } = useSWR(
+    "https://fastserve.onrender.com/api/accounts/profile/" + id,
+    fetcher
+  );
   if (isLoading) return <div>isloading</div>;
   if (error) return <div className="text-5xl"> NO User Founded</div>;
   console.log(profileData);
@@ -68,7 +71,7 @@ const userprofile = () => {
   const handlestatus = () => {
     const options = {
       method: "PATCH",
-      url: `/api/accounts/toggle/${id}`,
+      url: `https://fastserve.onrender.com/api/accounts/toggle/${id}`,
     };
 
     axios

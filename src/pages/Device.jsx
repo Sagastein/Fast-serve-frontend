@@ -4,14 +4,17 @@ import axios from "axios";
 
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 export default function DeviceList() {
-  const { data, isLoading, error, mutate } = useSwr("/api/device", fetcher);
+  const { data, isLoading, error, mutate } = useSwr(
+    "https://fastserve.onrender.com/api/device",
+    fetcher
+  );
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading...</div>;
 
   const handleToggleSwitch = async (deviceId) => {
     const options = {
       method: "PATCH",
-      url: "http://localhost:8080/api/device/mode/" + deviceId,
+      url: "https://fastserve.onrender.com/api/device/mode/" + deviceId,
       headers: { "User-Agent": "insomnia/8.4.5" },
     };
 

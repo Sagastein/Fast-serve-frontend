@@ -15,7 +15,7 @@ function AccountSettings() {
   function handleData() {
     console.log("data");
     axios
-      .patch(`/api/users/${user.UserId}`, {
+      .patch(`https://fastserve.onrender.com/api/users/${user.UserId}`, {
         fullName: fullName,
         email: email,
         tel: tel,
