@@ -18,9 +18,9 @@ const userprofile = () => {
   function createAccount() {
     const options = {
       method: "POST",
-      url: "http://localhost:4000/api/accounts",
+      url: "/api/accounts",
       headers: { "Content-Type": "application/json" },
-      data: { UserId: id, status: "Active" },
+      data: { UserId: user.UserId, status: "Active" },
     };
 
     axios
@@ -31,7 +31,7 @@ const userprofile = () => {
         navigate(0);
       })
       .catch(function (error) {
-        alert(error.response.data.message);
+        console.log(error.response);
       });
   }
   useEffect(() => {

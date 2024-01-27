@@ -94,15 +94,15 @@ function Adduser() {
       onClick={haddleClose}
       className="fixed flex z-20  inset-0 bg-black bg-opacity-25 backdrop-blur-[1px] justify-center items-center"
     >
-      <article className="bg-white z-20 border-b-2 border-primary w-10/12 md:w-7/12 rounded-md">
-        <div className="bg-primary py-4 rounded-tr-md rounded-tl-md">
+      <article className="bg-white z-20 border-b-2 border-blue-400 w-10/12 md:w-5/12 rounded-md">
+        <div className="bg-blue-400 py-4 rounded-tr-md rounded-tl-md">
           <h1 className="text-center  text-white capitalize font-medium underline underline-offset-4">
             Add new user
           </h1>
         </div>
-        <section className="grid p-4 space-y-2">
+        <section className="grid p-4 space-y-1">
           <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
-            <div className="grid gap-2">
+            <div className="grid gap-1">
               <label className="capitalize font-medium" htmlFor="UserId">
                 User ID
               </label>
@@ -118,7 +118,7 @@ function Adduser() {
                 {errors.UserId?.message}
               </p>
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-1">
               <label className="capitalize" htmlFor="fullName">
                 full Name
               </label>
@@ -133,7 +133,7 @@ function Adduser() {
                 {errors.fullName?.message}
               </p>
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-1">
               <label className="capitalize" htmlFor="email">
                 Email
               </label>
@@ -148,7 +148,7 @@ function Adduser() {
                 {errors.email?.message}
               </p>
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-1">
               <label className="capitalize" htmlFor="tel">
                 tel
               </label>
@@ -163,7 +163,10 @@ function Adduser() {
                 {errors.tel?.message}
               </p>
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-1">
+              <label className="capitalize" htmlFor="tel">
+                Gender
+              </label>
               <select
                 {...register("gender", { required: true })}
                 id="gender"
@@ -178,7 +181,7 @@ function Adduser() {
                 {errors.gender?.message}
               </p>
             </div>
-            <div className="grid my-4 rounded-md justify-center border-2 group cursor-pointer hover:bg-primary border-primary">
+            <div className="grid my-4 rounded-md justify-center border-2 group cursor-pointer hover:bg-blue-400 border-blue-400">
               <button
                 type="submit"
                 className="py-1 px-4 font-mono capitalize group-hover:text-white text-center"
