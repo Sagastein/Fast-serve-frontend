@@ -6,7 +6,10 @@ import useSwr from "swr";
 
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 function Overview() {
-  const { data, error, isLoading } = useSwr("api/dashboards/stats", fetcher);
+  const { data, error, isLoading } = useSwr(
+    "https://fastserve.onrender.com/api/dashboards/stats",
+    fetcher
+  );
   if (error) return <div>{error.message}</div>;
   if (isLoading) return <div>loading...</div>;
   return (
