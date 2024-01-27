@@ -42,7 +42,10 @@ const UsersTable = () => {
     setCurrentPage(page);
   };
 
-  const { data, error, isLoading } = useSWR("/api/users", fetcher);
+  const { data, error, isLoading } = useSWR(
+    "https://fastserve.onrender.com/api/users",
+    fetcher
+  );
   const navigate = useNavigate();
 
   if (isLoading) {
@@ -91,12 +94,12 @@ const UsersTable = () => {
   const firstIndex = currentPage * pageSize + 1;
   const lastIndex = Math.min((currentPage + 1) * pageSize, filteredData.length);
 
-  const sa = (userId) => {
+  const sa = (userId, user) => {
     console.log("params", userId);
     if (userId === undefined)
       return navigate("/admin/users", { replace: true });
     // navigate(`/profile/${userId}`);
-    navigate(`/admin/profile/${userId}/`);
+    navigate(`/admin/profile/${userId}/`, { state: { user: user } });
   };
 
   return (
@@ -129,7 +132,7 @@ const UsersTable = () => {
             {paginatedData.map((row) => (
               <TableRow
                 className="hover:bg-gray-200 cursor-pointer"
-                onClick={() => sa(row.UserId)}
+                onClick={() => sa(row.UserId, row)}
                 key={row.UserId}
               >
                 {columns.map((column) => (
