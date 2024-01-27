@@ -6,9 +6,17 @@ import {
 } from "react-icons/tb";
 import { CiSettings } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
+import useSignOut from "react-auth-kit/hooks/useSignOut";
+import { useNavigate } from "react-router-dom";
 
 import { NavLink } from "react-router-dom";
 function SideBar() {
+  const signOut = useSignOut();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    signOut();
+    navigate("/login");
+  };
   const links = [
     {
       id: 1,
@@ -43,7 +51,7 @@ function SideBar() {
   ];
   return (
     <div className="bg-white w-32 h-[90vh] flex flex-col  justify-between rounded-lg shadow-lg py-2">
-      <div className=" grid gap-y-4">
+      <div id="links"  className="grid gap-y-4">
         {links.map((link) => (
           <NavLink
             end
@@ -52,7 +60,6 @@ function SideBar() {
             className="flex hover:translate-x-2 group delay-200 duration-250 items-center capitalize w-full gap-2 p-2 px-4"
           >
             <span className="group-hover:text-blue-400">{link.icon}</span>
-
             <p className="text-xs font-bold group-hover:text-blue-400 text-slate-600">
               {link.name}
             </p>
@@ -61,7 +68,7 @@ function SideBar() {
       </div>
       <div className="flex justify-center items-center gap-2">
         <IoIosLogOut className="font-bold " />
-        <button>logout</button>
+        <button onClick={handleLogout}>logout</button>
       </div>
     </div>
   );
