@@ -7,7 +7,10 @@ const UserTransactions = () => {
   const { id } = useParams();
   const [page, setPage] = useState(1);
   const rowsPerPage = 6;
-  const { data, error, isLoading } = useSWR("/api/transaction/" + id, fetcher);
+  const { data, error, isLoading } = useSWR(
+    "https://fastserve.onrender.com/api/transaction/" + id,
+    fetcher
+  );
   if (isLoading) return <div>isloading</div>;
   if (error)
     return (

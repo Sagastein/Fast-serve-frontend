@@ -20,7 +20,7 @@ const UserDeposit = () => {
     } else {
       const options = {
         method: "POST",
-        url: "/api/transaction",
+        url: "https://fastserve.onrender.com/api/transaction",
         headers: { "Content-Type": "application/json" },
         data: { Id: user.UserId, amount: amount },
       };

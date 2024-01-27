@@ -18,7 +18,7 @@ function Login() {
   const handleSubmit = () => {
     const options = {
       method: "POST",
-      url: "/api/auth/login",
+      url: "https://fastserve.onrender.com/api/auth/login",
       headers: {
         "Content-Type": "application/json",
       },

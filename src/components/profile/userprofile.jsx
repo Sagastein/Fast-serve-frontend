@@ -68,7 +68,7 @@ const userprofile = () => {
   const handlestatus = () => {
     const options = {
       method: "PATCH",
-      url: `/api/accounts/toggle/${id}`,
+      url: `https://fastserve.onrender.com/api/accounts/toggle/${id}`,
     };
 
     axios

@@ -57,7 +57,7 @@ function Adduser() {
     console.log(data);
     const options = {
       method: "POST",
-      url: "/api/users",
+      url: "https://fastserve.onrender.com/api/users",
       headers: { "Content-Type": "application/json" },
       config: { headers: { "Content-Type": "multipart/form-data" } },
       data: data,

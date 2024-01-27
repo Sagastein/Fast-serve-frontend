@@ -8,7 +8,10 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 const Profile = () => {
   const { id } = useParams();
   console.log("id is 2:", id);
-  const { data, error, isLoading } = useSWR("/api/users/" + id, fetcher);
+  const { data, error, isLoading } = useSWR(
+    "https://fastserve.onrender.com/api/users/" + id,
+    fetcher
+  );
   if (isLoading) return <div>isloading</div>;
   if (!data) return <div>No User Found With This Id</div>;
   if (error) return <p>Error Error user</p>;
