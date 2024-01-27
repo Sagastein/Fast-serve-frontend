@@ -116,7 +116,7 @@ const userprofile = () => {
           <div className="p-2 my-4  mx-auto grid justify-center">
             <img
               className="rounded-full h-36 w-36"
-              src="https://randomuser.me/api/portraits/men/75.jpg"
+              src="https://ui-avatars.com/api/?name=samuel+gakwaya&color=fff&size=128"
               alt="profile"
             />
           </div>
