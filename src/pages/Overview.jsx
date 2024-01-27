@@ -50,7 +50,7 @@ function Overview() {
             </section>
           </section>
           <section className="my-2">
-            <h1 className="my-2">chart</h1>
+            <h1 className="my-2">Chart</h1>
             <div>
               <LineChartExample />
             </div>
